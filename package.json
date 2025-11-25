@@ -4,6 +4,11 @@
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
-		"prettier": "^3.6.2"
+		"@types/node": "^22.19.1",
+		"dotenv-cli": "^11.0.0",
+		"prettier": "^3.6.2",
+		"shx": "^0.4.0",
+		"tsx": "^4.20.6",
+		"typescript": "^5.9.3"
 	}
 }
