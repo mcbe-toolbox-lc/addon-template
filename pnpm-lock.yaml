@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@minecraft/server':
+        specifier: 2.2.0
+        version: 2.2.0(@minecraft/common@1.2.0)(@minecraft/vanilla-data@1.21.124)
     devDependencies:
       '@mcbe-toolbox-lc/builder':
         specifier: ^0.1.1
@@ -203,6 +207,18 @@ packages:
   '@mcbe-toolbox-lc/builder@0.1.1':
     resolution: {integrity: sha512-8rKSLYi/WPx8iXBjPFTcnAYH00DiJNHan5umjc1UG6GiwJnmG0+bpfyHrk2/VL85SuNVTl4npAr48p9cXh3/Mg==}
     engines: {node: '>= 22'}
+
+  '@minecraft/common@1.2.0':
+    resolution: {integrity: sha512-JdmEq4P3Z/FtoBzhLijFgMSVFnFRrUoLwY8DHHrgtFo0mfLTOLTB1RErYjLMsA6b7BGVNxkX/pfFRiH7QZ0XwQ==}
+
+  '@minecraft/server@2.2.0':
+    resolution: {integrity: sha512-Tn+Sr7IK71LptVOumTSWWXpjYgCqgCCwB8BosnU1fUltJV3JsNTnRtQMHlzQwSDGwTF0P0HJFhDALoOMlG/j2Q==}
+    peerDependencies:
+      '@minecraft/common': ^1.2.0
+      '@minecraft/vanilla-data': '>=1.20.70'
+
+  '@minecraft/vanilla-data@1.21.124':
+    resolution: {integrity: sha512-n00ry2BCbDiQ4tbiHIBeU4QSvbyClg8O0weWDhKBM1tCsGJMI/+MGaZ3LWZs2H79k/OuDMaPlWwqt4drW6tHDA==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -857,6 +873,15 @@ snapshots:
     transitivePeerDependencies:
       - bare-abort-controller
       - react-native-b4a
+
+  '@minecraft/common@1.2.0': {}
+
+  '@minecraft/server@2.2.0(@minecraft/common@1.2.0)(@minecraft/vanilla-data@1.21.124)':
+    dependencies:
+      '@minecraft/common': 1.2.0
+      '@minecraft/vanilla-data': 1.21.124
+
+  '@minecraft/vanilla-data@1.21.124': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:

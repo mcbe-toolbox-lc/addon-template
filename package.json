@@ -3,6 +3,9 @@
 	"scripts": {
 		"format": "prettier --write ."
 	},
+	"dependencies": {
+		"@minecraft/server": "2.2.0"
+	},
 	"devDependencies": {
 		"@mcbe-toolbox-lc/builder": "^0.1.1",
 		"@types/node": "^22.19.1",
