@@ -18,6 +18,8 @@ Details are explained below.
 
 ## Prerequisites
 
+Please install these tools on your system before proceeding:
+
 - [Git](https://git-scm.com/install/)
 - [Node.js](https://nodejs.org/) (v22 or later)
 - [pnpm](https://pnpm.io/installation)
