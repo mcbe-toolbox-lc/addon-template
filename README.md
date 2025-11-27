@@ -1,11 +1,20 @@
 # Minecraft Bedrock Add-on Template
 
-Template repository for a Minecraft Bedrock add-on project.
+> [!IMPORTANT]
+> This template is intended for development on Windows or Linux.
+> If you are developing on mobile, please look elsewhere.
 
-- 📂 "Project folder" approach - not inside `com.mojang` folder
-- ⚡ One command to build (compile) the packs into `com.mojang` folder
-- ☑️ Scripting with TypeScript supported out of the box
-- 📦 Easily integrate npm packages
+Feel free to use this template! No credit is required.
+
+Key points:
+
+- 📂 Both the behavior pack and the resource pack reside in the same "project folder"
+- 🛡️ Your project folder can be located outside of the potentially dangerous `com.mojang` folder
+- ⚡ One command to build (compile) the packs and copy them into the `com.mojang` folder
+- ☑️ TypeScript is supported out of the box
+- 📦 Easy integration of external packages through npm
+
+Details are explained below.
 
 ## Prerequisites
 
