@@ -50,3 +50,28 @@ Main benefits:
 - There's no longer a need to open two code editor windows (one for BP and one for RP)
 - Git integration is finally possible
 - Isolated from deep hidden locations like the `com.mojang` folder
+
+### Build
+
+_In the world of software development, "build" refers to the process of converting source code and
+assets into a deployable software product or component._
+
+In this case, "build" means doing _some nice things_ and copying each pack from source (project
+folder) to user-defined location(s).
+
+This template has a custom build system fully configured and ready to go. 🫡
+
+Some nice things that happen during a build operation include:
+
+- Compiling (bundling) behavior pack scripts written in JavaScript/TypeScript
+  - If you enable bundling, imported external packages will be included in the bundle
+- Converting [JSON5](https://json5.org/) files into plain JSON
+- Generating [texture_list.json](https://wiki.bedrock.dev/concepts/textures-list) in resource pack
+- Creating .mcpack or .mcaddon archive(s)
+
+You can also let the build system watch for file changes in the background and re-build when a file
+change is detected in source.
+
+While not storing packs directly in the `com.mojang` folder introduces the need for a build system
+and makes instant syncing impossible, it also opens up opportunities to make your add-on development
+more flexible and enjoyable!
