@@ -45,10 +45,11 @@ Minecraft might (accidentally) delete your work during an update! 😱
 The project folder is the single, top-level directory that acts as the centralized workspace for an
 add-on, containing both packs and their source code, resources, and build configurations.
 
-Main benefits:
+Main benefits include:
 
 - There's no longer a need to open two code editor windows (one for BP and one for RP)
-- Git integration is finally possible
+- Source control with Git is finally practical
+- Integrate external tools through [npm](https://www.npmjs.com/)
 - Isolated from deep hidden locations like the `com.mojang` folder
 
 ### Build
