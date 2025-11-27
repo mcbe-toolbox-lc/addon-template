@@ -1,6 +1,7 @@
 {
 	"private": true,
 	"scripts": {
+		"typecheck": "tsc && tsc -p scripts/tsconfig.json",
 		"format": "prettier --write ."
 	},
 	"dependencies": {
