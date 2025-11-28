@@ -97,3 +97,49 @@ Please install these tools on your system before proceeding:
 - `pnpm-workspace.yaml`: pnpm's workspace configuration file.
 - `tsconfig.base.json`: Base TypeScript configuration.
 - `tsconfig.json`: TypeScript configuration for BP scripts.
+
+## Getting Started
+
+First of all, create your own repository from this template by clicking the "Use this template"
+button in the top right.
+
+After cloning the repository to your local, create a file named `.env` at top-level.
+You can set environment variables in there.
+
+An environment variable is a **dynamic named value** that can affect the way running processes will
+behave. In this case, it **affects the build script's behavior**.
+
+Copy and paste this to the file:
+
+```env
+# Default paths on Windows. You can specify any directory paths.
+# Don't forget to replace {USERNAME} with actual user directory name
+DEV_BEHAVIOR_PACKS_DIR="C:\Users\{USERNAME}\AppData\Roaming\Minecraft Bedrock\Users\Shared\games\com.mojang\development_behavior_packs"
+DEV_RESOURCE_PACKS_DIR="C:\Users\{USERNAME}\AppData\Roaming\Minecraft Bedrock\Users\Shared\games\com.mojang\development_resource_packs"
+```
+
+Then, open `build.ts` found in the `scripts/` folder, and change things to your liking.
+
+Run the following command to build in development mode:
+
+```bash
+pnpm run build:dev
+```
+
+After the command is complete, build output can be found in the `build/` folder.
+Also they have been copied into locations you specified earlier in the `.env` file
+(`development_behavior_packs` and `development_resource_packs`).
+
+Try these too:
+
+```bash
+# Watch for file changes and rebuild automatically
+pnpm run build:dev:watch
+```
+
+```bash
+# Create non-dev build v0.6.9
+pnpm dotenv -v VERSION=0.6.9 -- pnpm run build
+```
+
+Take a look inside [package.json](./package.json) to know what these scripts do.
