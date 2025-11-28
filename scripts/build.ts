@@ -23,6 +23,7 @@ const addonNameSlug = "untitled-addon"; // Directory name slug
 const minEngineVersion = [1, 21, 110];
 const minecraftPackageVersions = builder.getMinecraftPackageVersions(packageConfig);
 
+// https://www.uuidgenerator.net/version4
 const uuids = {
 	bpHeader: "7f519716-66c1-4d1c-9bb5-dee36e2cbb6e",
 	bpDataModule: "c30672bb-446a-458f-95ed-3b8a6e17c999",
