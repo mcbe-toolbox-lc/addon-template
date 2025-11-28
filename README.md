@@ -4,71 +4,30 @@
 > This template is intended for development on Windows or Linux.
 > If you're developing on a platform other than those, please look elsewhere.
 
-> [!TIP]
-> Cheatsheet can be found [here](./CHEATSHEET.md).
-
 Feel free to use this template! No credit is required. 💝
 
-## Introduction
+Key highlights of this template:
 
-### The Problem ⚠️
-
-Most add-on developers store their packs like this:
-
-```
-AppData
-└── ...
-    └── com.mojang
-        ├── development_behavior_packs
-        │   ├── addon-x-bp
-        │   ├── addon-y-bp
-        │   └── addon-z-bp
-        └── development_resource_packs
-            ├── addon-x-rp
-            ├── addon-y-rp
-            └── addon-z-rp
-```
-
-Packs of a single add-on are **dispersed and fragmented**.
-The biggest problem is probably that **it makes version control difficult**.
-You can't easily track changes across both packs simultaneously in a single repository.
-
-### The Solution 💡
-
-The solution is to put both packs in a single "project folder" like this:
-
-```
-my-addons
-└── addon-x   <--- The project folder, or we can call it a repository
-    ├── src
-    │   ├── bp
-    │   └── rp
-    └── ... project-specific files ...
-```
-
-This project folder is the single, top-level directory that acts as the **centralized workspace**
-for your add-on. It should be the root of your source code and version control (e.g., Git),
-**containing both the BP and RP** as well as any source code, resources, and build configurations.
-
-### The Solution Implemented 🏗️
-
-**This template implements the solution above.**
-
-Minecraft won't recognize packs outside the default locations, so this template has a custom build
-script that does _some nice things_ and copies each of your packs to where they should be.
-
-Some nice things that happen during a build operation include:
-
-- Compiling (bundling) behavior pack scripts that are written in JavaScript/TypeScript.
-  - Optionally, external dependencies can be bundled together.
-- Converting [JSON5](https://json5.org/) files into plain JSON.
-- Generating [texture_list.json](https://wiki.bedrock.dev/concepts/textures-list) in resource pack.
-- Creating `.mcpack` or `.mcaddon` archive(s).
-
-**It's fully configured.**
-I've been doing this approach for my recent add-ons, and it works great!
+- 📂 "Project folder" approach - no more dispersed pack locations!
+- 📦 Integrate external tools through npm
+- 🔍 Minecraft Bedrock Debugger for VSCode pre-configured
+- ☑️ Out-of-the-box TypeScript support
+- 🧼 Code formatter (Prettier) pre-configured
+- 📜 Scriptable pack manifests
+- 🔨 One command to build (compile) the add-on:
+  - Compiles (and optionally bundles) behavior pack scripts written in JavaScript/TypeScript.
+  - Converts [JSON5](https://json5.org/) files into plain JSON.
+  - Generates [texture_list.json](https://wiki.bedrock.dev/concepts/textures-list) in resource pack.
+  - Creates `.mcpack` or `.mcaddon` archive(s).
+  - Copies the processed packs to user-specified locations like `development_behavior_packs`.
 
 ## Prerequisites
+
+Please install these tools on your system before proceeding:
+
+- [Git](https://git-scm.com/install/)
+- [Node.js](https://nodejs.org/) (v22 or later)
+- [pnpm](https://pnpm.io/installation)
 
 If you understand these, things should be easier to understand:
 
@@ -77,61 +36,60 @@ If you understand these, things should be easier to understand:
 - JavaScript - [Tutorial by W3Schools 🎓](https://www.w3schools.com/js/)
 - Node.js - [Tutorial by W3Schools 🎓](https://www.w3schools.com/nodejs/default.asp)
 
-Please install these tools on your system before proceeding:
+## Quickstart
 
-- [Git](https://git-scm.com/install/)
-- [Node.js](https://nodejs.org/) (v22 or later)
-- [pnpm](https://pnpm.io/installation)
+1.  [Create a new repository from this template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
 
-## Getting Started
+2.  Clone it locally.
 
-First of all, create your own repository from this template by clicking the "Use this template"
-button in the top right.
+3.  Install dependencies
 
-After cloning the repository to your local,
-Run the following command to install dependencies:
+    Run the following command:
 
-```bash
-pnpm install
-```
+    ```
+    pnpm install
+    ```
 
-Then, create a file named `.env` at top-level.
-You can set environment variables in there.
+4.  Set environment variables by creating `.env` file
 
-An environment variable is a **dynamic named value** that can affect the way running processes will
-behave. In this case, it **affects the build script's behavior**.
+    Create a new file named `.env` and paste the text below to the file.
+    Don't forget to replace `{USERNAME}` with your actual user directory name.
 
-Copy and paste this to the file:
+    ```env
+    # Default paths on Windows. You can specify any directory paths.
+    DEV_BEHAVIOR_PACKS_DIR="C:\Users\{USERNAME}\AppData\Roaming\Minecraft Bedrock\Users\Shared\games\com.mojang\development_behavior_packs"
+    DEV_RESOURCE_PACKS_DIR="C:\Users\{USERNAME}\AppData\Roaming\Minecraft Bedrock\Users\Shared\games\com.mojang\development_resource_packs"
+    ```
 
-```env
-# Default paths on Windows. You can specify any directory paths.
-# Don't forget to replace {USERNAME} with actual user directory name
-DEV_BEHAVIOR_PACKS_DIR="C:\Users\{USERNAME}\AppData\Roaming\Minecraft Bedrock\Users\Shared\games\com.mojang\development_behavior_packs"
-DEV_RESOURCE_PACKS_DIR="C:\Users\{USERNAME}\AppData\Roaming\Minecraft Bedrock\Users\Shared\games\com.mojang\development_resource_packs"
-```
+5.  Review and edit `scripts/build.ts`
 
-Then, open `build.ts` found in the `scripts/` folder, and change things to your liking.
+    You probably want to change the values of `addonNameLabel`, `addonNameSlug`, and pack manifest
+    object properties.
 
-Run the following command to build in development mode:
+6.  Build
 
-```bash
-pnpm run build:dev
-```
+    Run the following command:
 
-After the command is complete, build output can be found in the `build/` folder.
-Also they have been copied into locations you specified earlier in the `.env` file
-(`development_behavior_packs` and `development_resource_packs`).
+    ```bash
+    pnpm run build:dev # Build in development mode
+    ```
 
-Try these too:
+    After the command is complete, build output can be found in the `build/` folder.
+    Also, they should've been copied into the locations you specified earlier in the `.env` file
+    (`development_behavior_packs` and `development_resource_packs`).
 
-```bash
-# Watch for file changes and rebuild automatically
-pnpm run build:dev:watch
-```
+    Try these too:
 
-```bash
-# Create non-dev build v0.6.9
-pnpm dotenv -v VERSION=0.6.9 -- pnpm run build
-```
+    ```bash
+    # Watch for file changes and rebuild automatically
+    pnpm run build:dev:watch
+    ```
 
-Take a look inside [package.json](./package.json) to know what these scripts do.
+    ```bash
+    # Create non-dev build v0.6.9
+    pnpm dotenv -v VERSION=0.6.9 -- pnpm run build
+    ```
+
+## Cheatsheet
+
+Cheatsheet can be found [here](./CHEATSHEET.md).
