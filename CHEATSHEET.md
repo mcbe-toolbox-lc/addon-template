@@ -46,7 +46,7 @@ Don't forget to edit the build script accordingly.
 To upgrade `@minecraft/server` to `2.3.0` for example:
 
 ```bash
-pnpm upgrade @minecraft/server@2.3.0 --save-exact
+pnpm upgrade @minecraft/server@2.3.0
 ```
 
 Don't forget to edit the build script accordingly.
