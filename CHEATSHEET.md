@@ -1,6 +1,13 @@
 # Cheatsheet
 
-## Directory Structure
+## Useful links
+
+- [Other repositories from **mcbe-toolbox-lc**](https://github.com/orgs/mcbe-toolbox-lc/repositories)
+- [Minecraft: Bedrock Edition Creator Documentation](https://learn.microsoft.com/en-us/minecraft/creator/?view=minecraft-bedrock-stable)
+- [Bedrock Wiki](https://wiki.bedrock.dev/)
+- [@minecraft/server npm package](https://www.npmjs.com/package/@minecraft/server)
+
+## Basic directory structure
 
 - `.vscode/`: Configuration for the [Visual Studio Code](https://code.visualstudio.com/) editor.
 - `scripts/`: Build scripts and task automation scripts. Not behavior pack scripts!
@@ -17,3 +24,29 @@
 - `pnpm-workspace.yaml`: pnpm's workspace configuration file.
 - `tsconfig.base.json`: Base TypeScript configuration.
 - `tsconfig.json`: TypeScript configuration for BP scripts.
+
+## Cleaning build output
+
+```bash
+pnpm run clean # This will delete the build/ folder
+```
+
+## Installing a package under the scope `@minecraft`
+
+To install `@minecraft/server-ui@2.0.0` for example:
+
+```bash
+pnpm install @minecraft/server-ui@2.0.0 --save-exact
+```
+
+Don't forget to edit the build script accordingly. 
+
+## Upgrading a package under the scope `@minecraft`
+
+To upgrade `@minecraft/server` to `2.3.0` for example:
+
+```bash
+pnpm upgrade @minecraft/server@2.3.0 --save-exact
+```
+
+Don't forget to edit the build script accordingly.
