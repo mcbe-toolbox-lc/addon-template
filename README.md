@@ -88,7 +88,14 @@ Please install these tools on your system before proceeding:
 First of all, create your own repository from this template by clicking the "Use this template"
 button in the top right.
 
-After cloning the repository to your local, create a file named `.env` at top-level.
+After cloning the repository to your local,
+Run the following command to install dependencies:
+
+```bash
+pnpm install
+```
+
+Then, create a file named `.env` at top-level.
 You can set environment variables in there.
 
 An environment variable is a **dynamic named value** that can affect the way running processes will
