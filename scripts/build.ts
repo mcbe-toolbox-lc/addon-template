@@ -52,7 +52,7 @@ const bpManifest = {
 			type: "script",
 			uuid: uuids.bpScriptsModule,
 			version: versionArray,
-			entry: "scripts/main.js",
+			entry: "scripts/index.js",
 		},
 	],
 	dependencies: [
