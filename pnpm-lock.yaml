@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@mcbe-toolbox-lc/vecarr':
+        specifier: ^0.1.2
+        version: 0.1.2
       '@minecraft/server':
         specifier: 2.2.0
         version: 2.2.0(@minecraft/common@1.2.0)(@minecraft/vanilla-data@1.21.124)
@@ -207,6 +210,9 @@ packages:
   '@mcbe-toolbox-lc/builder@0.1.1':
     resolution: {integrity: sha512-8rKSLYi/WPx8iXBjPFTcnAYH00DiJNHan5umjc1UG6GiwJnmG0+bpfyHrk2/VL85SuNVTl4npAr48p9cXh3/Mg==}
     engines: {node: '>= 22'}
+
+  '@mcbe-toolbox-lc/vecarr@0.1.2':
+    resolution: {integrity: sha512-xas5Jaf05aOWg2H0cAX7AZZD8actXt/koKtpvleCRy3Bw4mlxBcMmhedwdB6jArDJ/zTL9EbfuoR/ijyTSVNVQ==}
 
   '@minecraft/common@1.2.0':
     resolution: {integrity: sha512-JdmEq4P3Z/FtoBzhLijFgMSVFnFRrUoLwY8DHHrgtFo0mfLTOLTB1RErYjLMsA6b7BGVNxkX/pfFRiH7QZ0XwQ==}
@@ -873,6 +879,8 @@ snapshots:
     transitivePeerDependencies:
       - bare-abort-controller
       - react-native-b4a
+
+  '@mcbe-toolbox-lc/vecarr@0.1.2': {}
 
   '@minecraft/common@1.2.0': {}
 

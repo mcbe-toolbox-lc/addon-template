@@ -10,6 +10,7 @@
 		"format": "prettier --write ."
 	},
 	"dependencies": {
+		"@mcbe-toolbox-lc/vecarr": "^0.1.2",
 		"@minecraft/server": "2.2.0"
 	},
 	"devDependencies": {
