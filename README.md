@@ -29,6 +29,8 @@ Important prior knowledge (optional):
 - JavaScript - [Tutorial by W3Schools 🎓](https://www.w3schools.com/js/)
 - Node.js - [Tutorial by W3Schools 🎓](https://www.w3schools.com/nodejs/default.asp)
 
+Cheatsheet can be found [here](./CHEATSHEET.md).
+
 <hr/>
 
 # Untitled Add-on
@@ -78,6 +80,8 @@ No description.
 
 > [!IMPORTANT]
 > Mobile platforms are not supported.
+
+Cheatsheet for developers can be found [here](./CHEATSHEET.md).
 
 ### Prerequisites
 
