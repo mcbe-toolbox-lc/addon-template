@@ -97,7 +97,7 @@ Please install these software on your system before proceeding:
 
 ### Setup
 
-1.  Clone it locally.
+1.  Clone this repository (or your fork) locally
 
 2.  Install dependencies
 
