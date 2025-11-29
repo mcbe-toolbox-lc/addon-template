@@ -6,17 +6,17 @@ import path from "node:path";
 
 const isDev = Boolean(builder.getEnv("DEV"));
 
-const version = builder.getEnvWithFallback("VERSION", "0.0.1"); // Ignored in dev builds. Defaults to "0.0.1".
+const version = builder.getEnvWithFallback("VERSION", "0.0.1");
 const versionArray = builder.parseVersionString(version); // e.g., [0, 0, 1]
 const versionLabel = "v" + versionArray.join("."); // e.g., "v0.0.1"
 
 const shouldWatch = Boolean(builder.getEnv("WATCH")); // Whether to watch for file changes and rebuild
 
-// Define manifests like we always do:
+// Manifest is defined similarly to the traditional method:
 // https://learn.microsoft.com/en-us/minecraft/creator/reference/content/addonsreference/packmanifest?view=minecraft-bedrock-stable
 //
-// But we have the power of scripting!
-// These manifest objects will be converted to JSON later.
+// Except that we have the power of scripting here!
+// These manifest objects are later stringified to JSON.
 
 const addonNameLabel = "Untitled Add-on"; // Human-readable name
 const addonNameSlug = "untitled-addon"; // Directory name slug
@@ -35,7 +35,7 @@ const uuids = {
 const bpManifest = {
 	format_version: 2,
 	header: {
-		name: `${addonNameLabel} BP ${isDev ? "DEV" : versionLabel}`,
+		name: `${addonNameLabel} ${isDev ? "DEV" : versionLabel} [BP]`,
 		description: "No description.",
 		uuid: uuids.bpHeader,
 		version: versionArray,
@@ -57,17 +57,15 @@ const bpManifest = {
 	],
 	dependencies: [
 		{
-			// Depend on resource pack
+			// Resource pack dependency
 			uuid: uuids.rpHeader,
 			version: versionArray,
 		},
 		{
-			// Depend on server script API
 			module_name: "@minecraft/server",
 			version: minecraftPackageVersions["@minecraft/server"].replace("^", ""),
 		},
 		// {
-		// 	// Depend on server UI script API
 		// 	module_name: "@minecraft/server-ui",
 		// 	version: minecraftPackageVersions["@minecraft/server-ui"].replace("^", ""),
 		// },
@@ -77,7 +75,7 @@ const bpManifest = {
 const rpManifest = {
 	format_version: 2,
 	header: {
-		name: `${addonNameLabel} RP ${isDev ? "DEV" : versionLabel}`,
+		name: `${addonNameLabel} ${isDev ? "DEV" : versionLabel} [RP]`,
 		description: "No description.",
 		uuid: uuids.rpHeader,
 		version: versionArray,
@@ -90,7 +88,7 @@ const rpManifest = {
 			version: versionArray,
 		},
 	],
-	capabilities: ["pbr"], // Adding PBR capability is recommended even if you don't add PBR textures
+	capabilities: ["pbr"], // Adding PBR capability is a good practice even if you don't add PBR textures
 };
 
 // Define build target paths
@@ -118,7 +116,7 @@ if (isDev) {
 	archiveOptions.push({ outFile: `${archivePath}.zip` });
 }
 
-// Create configuration object later passed to builder
+// Create a configuration object that will be passed to the build system
 
 const config: builder.ConfigInput = {
 	behaviorPack: {
@@ -139,8 +137,9 @@ const config: builder.ConfigInput = {
 	},
 	watch: shouldWatch,
 	archive: archiveOptions,
+	// logLevel: "debug",
 };
 
-// Start build
+// Build!
 
 await builder.build(config);
