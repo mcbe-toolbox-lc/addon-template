@@ -1,0 +1,8 @@
+{
+	"Import @minecraft/server": {
+		"scope": "javascript,typescript",
+		"prefix": "mci",
+		"body": ["import * as ${1:mc} from \"@minecraft/server\";", "$2"],
+		"description": "Imports the Minecraft Server API",
+	},
+}
