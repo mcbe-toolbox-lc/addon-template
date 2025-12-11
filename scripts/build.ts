@@ -18,8 +18,9 @@ const shouldWatch = Boolean(builder.getEnv("WATCH")); // Whether to watch for fi
 // Except that we have the power of scripting here!
 // These manifest objects are later stringified to JSON.
 
-const addonNameLabel = "Untitled Add-on"; // Human-readable name
-const addonNameSlug = "untitled-addon"; // Directory name slug
+const addonNameSlug = "untitled-addon";
+const addonNameLabel = "Untitled Add-on";
+const addonNameLabelWithVersion = `${addonNameLabel} ${isDev ? "DEV" : versionLabel}`
 const minEngineVersion = [1, 21, 110];
 const minecraftPackageVersions = builder.getMinecraftPackageVersions(packageConfig);
 
@@ -35,7 +36,7 @@ const uuids = {
 const bpManifest = {
 	format_version: 2,
 	header: {
-		name: `${addonNameLabel} ${isDev ? "DEV" : versionLabel} [BP]`,
+		name: addonNameLabelWithVersion,
 		description: "No description.",
 		uuid: uuids.bpHeader,
 		version: versionArray,
@@ -75,7 +76,7 @@ const bpManifest = {
 const rpManifest = {
 	format_version: 2,
 	header: {
-		name: `${addonNameLabel} ${isDev ? "DEV" : versionLabel} [RP]`,
+		name: addonNameLabelWithVersion,
 		description: "No description.",
 		uuid: uuids.rpHeader,
 		version: versionArray,
