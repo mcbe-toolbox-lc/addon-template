@@ -33,4 +33,7 @@ Steps to reproduce the behavior:
 A clear and concise description of what you expected to happen.
 
 **Screenshot/Video**
-If applicable, add a screenshot or a video to help explain your problem.
+If applicable, add a screenshot or video to help explain your problem.
+
+**Additional context**
+Add any other context about the problem here.
