@@ -16,6 +16,8 @@ Before getting started, ensure you have the following installed on your machine:
 
 ## :dna: Clone Repository
 
+(You may have already done this)
+
 Clone this repository (or your fork) locally.
 [How?](https://docs.github.com/repositories/creating-and-managing-repositories/cloning-a-repository)
 
