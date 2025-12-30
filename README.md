@@ -12,3 +12,5 @@ configuration.
 - **⚡ Automated Workflow**: Accelerate iteration with a single build-and-deploy command (to `com.mojang`).
 - **🛡️ TypeScript First**: Write safer scripts with pre-configured TypeScript and smart editor features.
 - **📦 npm Powered**: Use external libraries effortlessly. Esbuild automatically bundles imported packages.
+
+[Read more](./docs/architecture.md)
