@@ -12,5 +12,3 @@ configuration.
 - **:zap: Automated Workflow**: Accelerate iteration with a single build-and-deploy command (to `com.mojang`).
 - **:shield: TypeScript First**: Write safer scripts with pre-configured TypeScript and smart editor features.
 - **:package: npm Powered**: Use external libraries effortlessly. Esbuild automatically bundles imported packages.
-
-[Read more](./docs/architecture.md)
