@@ -15,7 +15,7 @@ To create a release build version `1.2.3`, run:
 pnpm dotenv -v VERSION=1.2.3 -- pnpm run build
 ```
 
-Once the operation is complete, you can find the output in the `build` folder.
+See [BUILD.md](./BUILD.md) for more.
 
 ## :bricks: Modifying Dependencies
 

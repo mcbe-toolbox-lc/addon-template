@@ -67,33 +67,10 @@ pnpm install
 
 ## :zap: Build
 
-### Development Build
-
 Run the following command to create a new development build:
 
 ```bash
 pnpm run build:dev
 ```
 
-Development build packs will be copied into the folders you specified in `.env`.
-
-Once done, open Minecraft and you'll see the available packs.
-
-There's also watch mode, which rebuilds on file changes:
-
-```bash
-pnpm run build:dev:watch
-```
-
-### Release Build
-
-For release (non-dev) builds, the command gets slightly more complicated:
-
-```bash
-# Create release build v0.6.9
-pnpm dotenv -v VERSION=0.6.9 -- pnpm run build
-```
-
-You can find the output in the `build` folder.
-
-Release build packs are not copied into the folders you specified in `.env`.
+See [BUILD.md](./BUILD.md) for more.
