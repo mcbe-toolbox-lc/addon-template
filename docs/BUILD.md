@@ -2,8 +2,6 @@
 
 ## :test_tube: Development Build
 
-Run build in development mode:
-
 ```bash
 pnpm run build:dev
 ```
@@ -20,8 +18,6 @@ pnpm run build:dev:watch
 ```
 
 ## :speaking_head: Release Build
-
-Run build in release mode:
 
 ```bash
 # Versioning:    major minor patch
