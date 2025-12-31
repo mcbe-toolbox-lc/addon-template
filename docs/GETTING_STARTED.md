@@ -4,4 +4,4 @@
 
 2. **Setup the environment:** Please follow the steps in [DEVELOPMENT.md](../DEVELOPMENT.md).
 
-3. **Customize the build:** You'll likely want to tweak the configuration. Open `scripts/build.ts` and adjust the variables to suit your needs.
+3. **Customize the build:** You'll likely want to tweak the configuration. Open the [build script](../scripts/build.ts) and adjust the variables to suit your needs.
