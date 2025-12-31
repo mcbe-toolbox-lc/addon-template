@@ -16,4 +16,6 @@ configuration.
 ## :books: Documentation
 
 - **[Getting Started](./docs/GETTING_STARTED.md)** - Installation and setup.
-- **[Recipes & Tricks](./docs/RECIPES.md)** - Common use cases and "how-to" guides.
+- **[Developer Setup](./docs/DEVELOPMENT.md)** - Developer setup guide.
+- **[Build Commands](./docs/BUILD.md)** - How to build your add-on.
+- **[Recipes & Tricks](./docs/RECIPES.md)** - Various "how-to" guides.
