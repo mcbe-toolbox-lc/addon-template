@@ -2,111 +2,55 @@
 
 No description.
 
-## Installation (for users)
+## :package: Installation (for users)
+
+> [!IMPORTANT]
+> When downloading the add-on, do NOT download from the big green “Code” button on GitHub.
+> Instead, look for a file in the "Releases" section, or other distribution websites.
 
 ### Standard
 
-1. Download an archive file with the `.mcaddon` extension for the version you want.
-2. Open your file explorer app and find the file you downloaded in step 1.
-3. Open the file to install. You should see a prompt like "Open with Minecraft".
-4. Add the installed pack(s) to your (new) world.
+1. Download the `.mcaddon` or `.mcpack` file for your desired version
+2. Open your file explorer app and find the downloaded file
+3. Open the file with Minecraft to install
+4. Add the installed packs to your (new) world
 5. Done!
 
 ### Manually
 
-1. Download an archive file with the `.zip` extension for the version you want.
+1. Download the `.zip` file for your desired version
 
-   :warning: Do not download from the big green “Code” button on GitHub. Instead, check the release
-   files.
+   > If a zip file is unavailable, download the `.mcaddon` or `.mcpack` file instead and rename the
+   > file extension to `.zip` later.
 
-   :warning: Zip file may not be available. In that case, download the file the `.mcaddon` extension
-   and change its file extension to `.zip`.
+2. Open your file explorer app and find the downloaded file
+3. Extract the zip file
+4. Locate the internal folders that will contain the packs
 
-2. Open your file explorer app and find the file you downloaded in step 1.
-3. Extract the zip file.
-4. Copy and paste the extracted pack folder(s) into appropriate locations.
+   You need to know where the `com.mojang` folder, and its subfolders, `behavior_packs` and
+   `resource_packs` are. It heavily depends on what platform your device is on.
 
-   You need to know where the `com.mojang` folder is. It heavily depends on what platform
-   your device is on.
-
-   On Windows:
+   Standard paths on Windows 11 (Minecraft version 1.21.120+):
 
    ```
-   C:\Users\%username%\AppData\Roaming\Minecraft Bedrock\Users\Shared\games\com.mojang
+   %AppData%\Minecraft Bedrock\Users\Shared\games\com.mojang\behavior_packs
    ```
 
-   > For other platforms, find other resources online.
+   ```
+   %AppData%\Minecraft Bedrock\Users\Shared\games\com.mojang\resource_packs
+   ```
 
-   Behavior pack must be copied into either `behavior_packs` or `development_behavior_packs`.
+   > For other platforms, check [this page on Bedrock Wiki](https://wiki.bedrock.dev/guide/project-setup.html#the-com-mojang-folder)
 
-   Resource pack must be copied into either `resource_packs` or `development_resource_packs`.
+5. Copy and paste the pack folders we extracted from the zip file
 
-5. Add the installed pack(s) to your (new) world.
-6. Done!
+   Paste the behavior pack into the `behavior_packs` folder.
 
-## Installation (for developers)
+   Paste the resource pack into the `resource_packs` folder.
 
-> [!IMPORTANT]
-> Mobile platforms are not supported.
+6. Open Minecraft and add the installed pack(s) to your (new) world
+7. Done!
 
-### Prerequisites
+## :package: Installation (for developers)
 
-Please install these software on your system before proceeding:
-
-- [Git](https://git-scm.com/install/)
-- [Node.js](https://nodejs.org/) (v22 or later)
-- [pnpm](https://pnpm.io/installation)
-
-### Setup
-
-1.  Clone this repository (or your fork) locally
-
-2.  Install dependencies
-
-    Run the following command:
-
-    ```
-    pnpm install
-    ```
-
-3.  Create the `.env` file
-
-    Create a new file named `.env` at top-level, and paste the text below to the file.
-    Don't forget to replace `{USERNAME}` with your actual username!
-
-    ```env
-    # Default paths on Windows. You can specify any directory paths.
-    DEV_BEHAVIOR_PACKS_DIR="C:\Users\{USERNAME}\AppData\Roaming\Minecraft Bedrock\Users\Shared\games\com.mojang\development_behavior_packs"
-    DEV_RESOURCE_PACKS_DIR="C:\Users\{USERNAME}\AppData\Roaming\Minecraft Bedrock\Users\Shared\games\com.mojang\development_resource_packs"
-    ```
-
-### Build
-
-After a build operation is complete, you can find the output in the `build/` folder.
-
-- Development build
-
-  Processed packs will be copied into the locations you specified in `.env`.
-
-  ```bash
-  pnpm run build:dev
-  ```
-
-- Development build + watch
-
-  Processed packs will be copied into the locations you specified in `.env`.
-
-  The build script will keep watching for file changes in the background until terminated.
-  When any file changes are detected, it will automatically rebuild.
-
-  ```bash
-  pnpm run build:dev:watch
-  ```
-
-- Non-development build
-
-  Create a non-development build version _0.6.9_.
-
-  ```bash
-  pnpm dotenv -v VERSION=0.6.9 -- pnpm run build
-  ```
+Read [DEVELOPMENT.md](./DEVELOPMENT.md)
