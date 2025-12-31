@@ -53,4 +53,4 @@ No description.
 
 ## :package: Installation (for developers)
 
-Read [DEVELOPMENT.md](./DEVELOPMENT.md)
+Read [DEVELOPMENT.md](./docs/DEVELOPMENT.md)
